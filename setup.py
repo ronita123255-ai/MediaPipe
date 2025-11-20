@@ -30,7 +30,9 @@ from setuptools.command import build_ext
 from setuptools.command import build_py
 from setuptools.command import install
 
-__version__ = 'dev'
+# Use a PEP 440 compatible default version string for packaging tools.
+# 'dev' by itself is invalid for packaging.version; set a safe placeholder.
+__version__ = '0.0.0'
 MP_DISABLE_GPU = os.environ.get('MEDIAPIPE_DISABLE_GPU') != '0'
 IS_WINDOWS = (platform.system() == 'Windows')
 IS_MAC = (platform.system() == 'Darwin')
